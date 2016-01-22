@@ -3,24 +3,24 @@ var weather = {
   lang: config.lang || 'nl',
   params: config.weather.params || null,
   iconTable: {
-    '01d':'wi-day-sunny',
-    '02d':'wi-day-cloudy',
-    '03d':'wi-cloudy',
-    '04d':'wi-cloudy-windy',
-    '09d':'wi-showers',
-    '10d':'wi-rain',
-    '11d':'wi-thunderstorm',
-    '13d':'wi-snow',
-    '50d':'wi-fog',
-    '01n':'wi-night-clear',
-    '02n':'wi-night-cloudy',
-    '03n':'wi-night-cloudy',
-    '04n':'wi-night-cloudy',
-    '09n':'wi-night-showers',
-    '10n':'wi-night-rain',
-    '11n':'wi-night-thunderstorm',
-    '13n':'wi-night-snow',
-    '50n':'wi-night-alt-cloudy-windy'
+    '01d': 'wi-day-sunny',
+    '02d': 'wi-day-cloudy',
+    '03d': 'wi-cloudy',
+    '04d': 'wi-cloudy-windy',
+    '09d': 'wi-showers',
+    '10d': 'wi-rain',
+    '11d': 'wi-thunderstorm',
+    '13d': 'wi-snow',
+    '50d': 'wi-fog',
+    '01n': 'wi-night-clear',
+    '02n': 'wi-night-cloudy',
+    '03n': 'wi-night-cloudy',
+    '04n': 'wi-night-cloudy',
+    '09n': 'wi-night-showers',
+    '10n': 'wi-night-rain',
+    '11n': 'wi-night-thunderstorm',
+    '13n': 'wi-night-snow',
+    '50n': 'wi-night-alt-cloudy-windy'
   },
   temperatureLocation: '.temp',
   windSunLocation: '.windsun',
@@ -32,7 +32,7 @@ var weather = {
   updateInterval: config.weather.interval || 6000,
   fadeInterval: config.weather.fadeInterval || 1000,
   intervalId: null
-}
+};
 
 /**
  * Rounds a float to one decimal place
@@ -41,7 +41,7 @@ var weather = {
  */
 weather.roundValue = function (temperature) {
   return parseFloat(temperature).toFixed(1);
-}
+};
 
 /**
  * Converts the wind speed (km/h) into the values given by the Beaufort Wind Scale
@@ -49,7 +49,7 @@ weather.roundValue = function (temperature) {
  * @param  {int} kmh The wind speed in Kilometers Per Hour
  * @return {int}     The wind speed converted into its corresponding Beaufort number
  */
-weather.ms2Beaufort = function(ms) {
+weather.ms2Beaufort = function (ms) {
   var kmh = ms * 60 * 60 / 1000;
   var speeds = [1, 5, 11, 19, 28, 38, 49, 61, 74, 88, 102, 117, 1000];
   for (var beaufort in speeds) {
@@ -59,7 +59,7 @@ weather.ms2Beaufort = function(ms) {
     }
   }
   return 12;
-}
+};
 
 /**
  * Retrieves the current temperature and weather patter from the OpenWeatherMap API
@@ -86,8 +86,8 @@ weather.updateCurrentWeather = function () {
       $(this.temperatureLocation).updateWithText(_newTempHtml, this.fadeInterval);
 
       var _now = moment().format('HH:mm'),
-          _sunrise = moment(data.sys.sunrise*1000).format('HH:mm'),
-          _sunset = moment(data.sys.sunset*1000).format('HH:mm');
+          _sunrise = moment(data.sys.sunrise * 1000).format('HH:mm'),
+          _sunset = moment(data.sys.sunset * 1000).format('HH:mm');
 
       var _newWindHtml = '<span class="wi wi-strong-wind xdimmed"></span> ' + this.ms2Beaufort(_wind),
           _newSunHtml = '<span class="wi wi-sunrise xdimmed"></span> ' + _sunrise;
@@ -149,7 +149,7 @@ weather.updateWeatherForecast = function () {
     }
   });
 
-}
+};
 
 weather.init = function () {
 
@@ -166,4 +166,4 @@ weather.init = function () {
     this.updateWeatherForecast();
   }.bind(this), this.updateInterval);
 
-}
+};
