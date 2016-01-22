@@ -1,11 +1,10 @@
 node_modules/
-.idea
+
+.idea/
 
 .idea/jsLibraryMappings.xml
 
 .idea/libraries/magic_mirror_node_modules.xml
-
-.idea/magic-mirror.iml
 
 .idea/magic-mirror.iml
 
