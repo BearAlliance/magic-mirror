@@ -1,16 +1,14 @@
 import {Component, View} from 'angular2/core';
-import {Http, Headers} from 'angular2/http';
+import {WeatherComponent} from '/app/weather/weather.component.ts';
+//import {Http, Headers} from 'angular2/http';
 
 @Component({
-    selector: 'app',
+    selector: 'my-app',
     templateUrl: '/app/app.html',
-    styleUrl: ['/css/custom.css'],
+    styleUrl: ['/css/app.css'],
+    directives: [WeatherComponent]
 })
 
-export class App {
-
-    constructor(public http: Http) {
-
-    }
-
+export class AppComponent {
+    public title = 'app'
 }

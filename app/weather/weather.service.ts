@@ -12,10 +12,10 @@ export class WeatherService {
         var apiKey = 'cc280c6ea8d1156eea264d547070843c';
         var weatherUrl = 'api.openweathermap.org/data/2.5/weather?q=5133268';
 
-        http.get(weatherUrl)
-            .observe(function(response) {
-           console.log(response);
-        });
+        //http.get(weatherUrl)
+        //    .observe(function(response) {
+        //   console.log(response);
+        //});
         return Promise.resolve('it works!');
     }
 
