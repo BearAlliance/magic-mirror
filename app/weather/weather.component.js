@@ -16,35 +16,14 @@ System.register(['angular2/core'], function(exports_1) {
                 core_1 = core_1_1;
             }],
         execute: function() {
-            //import {Http, HTTP_PROVIDERS} from 'angular2/http';
-            //import {WeatherService} from '/app/weather/weather.service.ts'
-            //import {OnInit} from 'angular2/core';
+            //import {Http, Response, Headers} from 'angular2/http';
+            //import {Observable} from 'rxjs/Observable';
+            //import {Subject } from 'rxjs/Subject';
             WeatherComponent = (function () {
                 function WeatherComponent() {
                     this.title = 'Weather';
                     this.data = weatherData;
                 }
-                //public getWeather = getWeather();
-                //
-                //constructor(http: Http) {
-                //    //var apiKey = 'cc280c6ea8d1156eea264d547070843c';
-                //    var weatherUrl = 'api.openweathermap.org/data/2.5/weather?q=5133268';
-                //    // our http call here
-                //    // make the call
-                //    http.get('api.openweathermap.org/data/2.5/weather?q=5133268')
-                //        // initial transform - result to json
-                //        //.map( (responseData) => {
-                //        //    console.log(responseData);
-                //        //})
-                //        // subscribe to output from this observable and bind
-                //        // the output to the component when received
-                //        .subscribe( res => {
-                //            console.log(res);
-                //        });
-                //
-                //}
-                WeatherComponent.prototype.getWeather = function () {
-                };
                 WeatherComponent = __decorate([
                     core_1.Component({
                         selector: 'weather',
